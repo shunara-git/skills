@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理画面 | Salon</title>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+  <!-- 画面全体は admin.js が組み立てる。ここは骨組みのみ。 -->
+  <div class="admin" id="admin">
+
+    <!-- 上部バー(常時表示:保存・サイトを開く) -->
+    <header class="topbar" id="topbar">
+      <div class="topbar-title">
+        <span class="topbar-logo" aria-hidden="true">✂</span>
+        <span>サロン管理画面</span>
+      </div>
+      <div class="topbar-actions">
+        <span class="dirty-note" id="dirtyNote" hidden>未保存の変更があります</span>
+        <a class="btn btn-ghost" id="openSiteLink" href="index.html" target="_blank" rel="noopener">サイトを開く</a>
+        <button class="btn btn-primary" id="saveBtn" type="button">保存</button>
+      </div>
+    </header>
+
+    <div class="admin-body">
+      <!-- 左サイドバー(タブナビ)。狭い画面では上部タブになる。 -->
+      <nav class="sidebar" id="sidebar" aria-label="管理メニュー"></nav>
+
+      <!-- メインエリア -->
+      <main class="content" id="content" aria-live="polite">
+        <h1 class="content-title" id="contentTitle"></h1>
+        <div class="content-body" id="contentBody"></div>
+      </main>
+    </div>
+
+    <!-- トースト表示領域 -->
+    <div class="toast-area" id="toastArea" aria-live="assertive"></div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
